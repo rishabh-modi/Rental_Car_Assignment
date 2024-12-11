@@ -21,7 +21,11 @@ class PushNotificationViewModel : ViewModel() {
             .build().create()
 
 
-
+    /*
+     Description: method to perform api call
+     via api object for setting max vehicle speed
+     Dependency : Object : Vehicle
+     */
     fun setVehicleMaxSpeed( vehicle: Vehicle){
         viewModelScope.launch {
             try {

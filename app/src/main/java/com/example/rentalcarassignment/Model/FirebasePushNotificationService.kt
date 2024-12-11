@@ -20,13 +20,12 @@ const val channel_name = "default channel"
 
 class FirebasePushNotificationService /* :  FirebaseMessagingService*/ {
 
+//Note : Errors due to lack of context of FirebaseMessagingService
 
-    fun authenticateUser() {
-        //method to authenticate API calls
-    }
-
-
-    //callback method for receiving notification messages
+    /*
+     Description:callback method to receive remote message
+     Dependency : Remote Message
+     */
     fun onNotificationReceived(message: Message) {
 
         //if message title and messages != null
@@ -34,7 +33,10 @@ class FirebasePushNotificationService /* :  FirebaseMessagingService*/ {
 
     }
 
-
+    /*
+     Description: method to create notification
+     Dependency : notification title | Notification message
+     */
     //errors due to context
     @SuppressLint("ServiceCast", "NewApi")
     fun createNotification(title: String, message: String) {
@@ -59,6 +61,12 @@ class FirebasePushNotificationService /* :  FirebaseMessagingService*/ {
 
     }
 
+
+/*
+ Description: method to return
+  remote view for notification
+ Dependency : notification title | notification message
+ */
     @SuppressLint("RemoteViewLayout")
     private fun getRemoteView(title: String, message: String): RemoteViews? {
         val remoteview = RemoteViews("com.example.rentalcarassignment", R.layout.notification)

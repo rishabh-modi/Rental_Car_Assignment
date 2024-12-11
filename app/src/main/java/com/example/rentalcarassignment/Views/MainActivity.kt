@@ -18,9 +18,9 @@ import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
-   lateinit var setSpeedButton : Button
-   lateinit  var vehicleSpeedViewModel : ViewModel
-   lateinit var vehicle :Vehicle
+    lateinit var setSpeedButton: Button
+    lateinit var vehicleSpeedViewModel: ViewModel
+    lateinit var vehicle: Vehicle
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,6 +49,12 @@ class MainActivity : AppCompatActivity() {
         setSpeedButton = findViewById(R.id.setSpeedButton)
     }
 
+
+    /*
+     Description: method to request notification
+       permission for android 13 and higher
+       Dependency : none
+       */
     private fun requestPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             val isPermissionGranted = ContextCompat.checkSelfPermission(
